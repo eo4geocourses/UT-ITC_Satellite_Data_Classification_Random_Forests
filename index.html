@@ -74,11 +74,21 @@
 				
 			
 				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
-								<section id="RF_1">
+				<section >
+					<h1>Random Forests classifier
+					</h1>
+					<!--!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+			
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="RF_1">
 					<section > 
 						<h2>What are ensemble classifiers?</h2> 
 						<p>Combination of multiple<em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
-					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\EnsembleClassifiers.png" alt="EnsembleClassifiers">
+					<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\EnsembleClassifiers.png" alt="EnsembleClassifiers">
 					</section>
 					<section>
 						<h2> How to create ensemble classifiers?</h2>
@@ -101,8 +111,8 @@
 					</section>
 					<section>
 						<h2> Game result</h2>
-					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games.png" alt="Example_1">
-                    <br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games2.png" alt="Ecampe_2">					
+					<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games.png" alt="Example_1">
+                    <br><img width="500" height="400" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games2.png" alt="Ecampe_2">					
 						<p> Variance decreases as number of games increase</p>
 					</section>
 					
@@ -112,7 +122,7 @@
 					<section>
 						<h2>Bagging (Bootstrap Aggregating)</h2>
 						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. When sampling of training data is done with replacement, it is called <em>bagging</em></p>
-					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging.png" alt="Bagging_1">
+					<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging.png" alt="Bagging_1">
 					</section>	
 					<section>
 						<h2> How does this work?</h2>
@@ -123,12 +133,12 @@
 							<li style="color:#ea9b2d;">TR = training set for each predictor</li>
 							<li style="color:#ea9b2d;">TR<em>i</em> = sample of N randomly selected samples with replacement</li>
 						</ul>
-						<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging2.png" alt="Bagging_2">
+						<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging2.png" alt="Bagging_2">
 					</section>
 					<section>
 						<h2>Bagging of decision trees</h2>
 						<p>What if these predictors are decision trees?</p>
-						<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging3.png" alt="Bagging_3">
+						<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging3.png" alt="Bagging_3">
 					</section>
 					
 					</section>
@@ -195,11 +205,11 @@
 					<section>
 						<h2>Why do we need oob?</h2>
 						<p>OOB sample is used for estimating unbiased classification error (oob error estimate) and variable importance</p>
-						<img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob2.png" alt="OOB_2">
+						<img width="400" height="50" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob2.png" alt="OOB_2">
 					</section>
 					<section>
 						<h2>Unbiased oob error estimates</h2>
-						<img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob3.png" alt="OOB_2">
+						<img width="400" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob3.png" alt="OOB_2">
 					</section>						
 					</section>
 					<!--Variable importance-->
@@ -212,22 +222,7 @@
 						<h2>Proximities</h2>
 						<p> Imagine that you send all training samples (including oob samples) down all trees, count the number of times when sample n and sample k are in the same terminal node and normalize by dividing it by number of trees. What does this tell you?</p>
 					</section>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-						
-						<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
-						
-						<aside class="notes">
-						You can find your presenter notes here (hit »S« on your keyboard).
-						</aside>
-					</section>
+					<!--Proximity-->
 					
 					<section >
 						<h2 style="color:#89b3e479;">Satellite navigation (SatNav)</h2>
