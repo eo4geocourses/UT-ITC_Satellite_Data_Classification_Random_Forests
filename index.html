@@ -14,13 +14,13 @@
 	<head>
 		<meta charset="utf-8">
 		 
-		<title>eo4geo template for Reveal JS</title>
+		<title>Random Forest</title>
 
 		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
 		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
 		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
 		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
-		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme"> --> <!-- anthrazit background design --> 
 		<!-- EO4GEO FONT ROBOTO SLAB -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
 		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
@@ -40,29 +40,29 @@
 				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
 			
 				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
-				 <div  class = "presentation_title" style=" text-align: center " >What is Copernicus?</div>	<!--The title of the presentation appears on each slide-->
+				 <div  class = "presentation_title" style=" text-align: center " >Random Forests</div>	<!--The title of the presentation appears on each slide-->
 				 
 
 			<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) >
 				@prefix dc: <http://purl.org/dc/terms/>.
 				@prefix eo4geo: <http://bok.eo4geo.eu/>.
 				<>  	dc:title "What is Copernicus?";
-					dc:creator "Stefan Lang, University of Salzburg";
-					dc:subject "Copernicus, EO4GEO, WP5, Satellite, Earth Observation";
-					dc:abstract "This is a template slideset for EO4GEO Partners to familiarize with EO4GEO, introducing the idea of Copernicus and its services. Nevertheless, content-generation is not the prime concern of the template. ";
-					dc:tableOfContents "(1) What is EO?; (2) Benefits of Copernicus; (3) Integration of Jupyter Notebooks; 
-						(4) Integration of Youtube Video; (5) Integration of H5P; (6) Copernicus Services; (7) Reference list;";
-					dc:description "Learning outcomes: Understand the Copernicus ecosystem and services; perform simple analysis with Jupyter Notebook; Understand Copernicus Climate Change Service;";
-					dc:contributor "Eva Missoni, Barbara Hofer";
-					dc:created "2020-06-20";
+					dc:creator "Mariana Belgiu, University of Twente";
+					dc:subject "Random Forest";
+					dc:abstract "Introduction to Random Forests";
+					dc:tableOfContents "(1)Concept of ensemble classifiers; (2) Random Forests; (3) Random Forest hyperparameter; (4) Fundamental differences between tree growth on decision trees and Random Forest;
+					Accuracy assessments in Random Forests";
+					dc:description "Learning objective: explain the advantanges of Random Forests over Decision Trees; describe the sensitivity of Random Forests to hyperparameters";
+					dc:contributor "Mariana Belgiu";
+					dc:created "2020-07-27";
 					dc:type "InteractiveResource";
 					dc:format "html";
 					dc:language "EN"; 
-					dc:SizeOrDuration "45min"
+					dc:SizeOrDuration "90min"
 					dc:audience "students";
 					dc:educationLevel "EQF 6";
-					dc:source "Existing youtube-video on Copernicus Climate Change Service; existing Jupyter Notebook on "Well switching in Bangladesh"";
-					dc:rightsHolder "Stefan Lang, University of Salzburg";
+					dc:source "";
+					dc:rightsHolder "Mariana Belgiu, University of Twente";
 					dc:license "CC BY-SA 4.0";
 					dc:relation eo4geo:TA7-5-1;
 					dc:relation eo4geo:TA7-5-2;
@@ -75,70 +75,161 @@
 			
 				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
 				<section >
-					<h1>What is Copernicus?</h1>
-					(A demo slide deck using the <em>Reveal.js</em> framework)
-				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+					<h1>Random Forests classifier
+					</h1>
+					<!--!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
 				<aside class="notes">
 					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
 				</aside>
 				</section>
+			
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="RF_1">
+					<section > 
+						<h2>What are ensemble classifiers?</h2> 
+						<p>Combination of multiple<em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
+					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\EnsembleClassifiers.png" alt="EnsembleClassifiers">
+					<section>
+						<h2> How to create ensemble classifiers?</h2>
+						<ul>
+							<li style="color:#ea9b2d;">Bagging</li>
+							<li style="color:#ea9b2d;">Boosting</li>
+						</ul>
+					</section>
+					<section >	
+					<h2> Ensemble of uncorrelated outcomes</h2>
+					<p> Let's play: pick a random number (A) in range [1, 100].The outcome of the game is:</p>
+					<ul>
+							<li style="color:#ea9b2d;">Win if A > 40</li>
+							<li style="color:#ea9b2d;">Loss otherwise</li>
+						</ul>
+					<p>Game 1: place 100 times, betting $1 each time</p>
+					<p>Game 2: place 10 times, betting $10 each time</p>
+					<p>Game 3: place one time, betting $100</p>
+					<p> We stimulate each game 10000 times. What do you expect?/</p>
+					</section>
+					<section>
+						<h2> Game result</h2>
+					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games.png" alt="Example_1">
+                    <br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games2.png" alt="Ecampe_2">					
+						<p> Variance decreases as number of games increase</p>
+					</section>
+					</section>
+					<!--Boostrap aggregation-->
+					<section>
+					<section>
+						<h2>Bagging (Bootstrap Aggregating)</h2>
+						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. When sampling of training data is done with replacement, it is called <em>bagging</em></p>
+					<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging.png" alt="Bagging_1">
+					</section>	
+					<section>
+						<h2> How does this work?</h2>
+						<p> Let's consider the following:</p>
+						<ul>
+							<li style="color:#ea9b2d;">N = number of samples in training set</li>
+							<li style="color:#ea9b2d;">L = number of predictors</li>
+							<li style="color:#ea9b2d;">TR = training set for each predictor</li>
+							<li style="color:#ea9b2d;">TR<em>i</em> = sample of N randomly selected samples with replacement</li>
+						</ul>
+						<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging2.png" alt="Bagging_2">
+					</section>
+					<section>
+						<h2>Bagging of decision trees</h2>
+						<p>What if these predictors are decision trees?</p>
+						<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging3.png" alt="Bagging_3">
+					</section>
+					
+					</section>
+					
+					<!--Random Forests-->
+					<section>
+					<section>
+						<h2>What is Random Forests?</h2>
+						<ul>
+							<li style="color:#ea9b2d;">It is an ensemble of decision trees</li>
+							<li style="color:#ea9b2d;"> It grows many classification trees (n_estimators)</li>
+							<li style="color:#ea9b2d;">Input vector goes through all the trees</li>
+							<li style="color:#ea9b2d;">Each tree votes for a class for each input vector</li>
+							<li style="color:#ea9b2d;">Class is chosen based on majority of votes</li>
+						</ul>						
+					</section>	
+					<section>
+						<h2> How an individual tree is grown?</h2>
+						<p> From an <em>m</em> number of feature, a <em> max_features</em> are selected randomly at each node. Usually the number of features tested for spliting the tree nodes is represented by the square of the total number of available features. Each node is split into two nodes only and there is no pruning</p>
+					</section>
+					<section>
+						<h2>How is this procedure different from tree growing in Decision Trees?/</h2>
+					</section>
+					
+					</section>
+					<!--Random Forests error rate-->
+					<section>
+					<section>
+						<h2>Forrest error rate</h2>
+						<p> This is highly influences by:</p>
+						<ul>
+							<li style="color:#ea9b2d;">Correlation between trees: increasing the correlation increases forest error rate</li>
+							<li style="color:#ea9b2d;"> Strength of individual forest tree: Increasing the tree strength decreases the forest error rate</li>
+						</ul>						
+					</section>
+					<section>
+						<h2>Forrest error rate(2)</h2>
+						<p>Correlation and strength are controlled by <em>max_features</em>. If max_features increases, correlation between, and strength of trees both increase. Therefore, we have to find an optimal range of max_features</p>
+					</section>					
+					</section>
+					
+					<!--Random Forests error rate-->
+					
+					<section>
+						<h2>Features of Random Forests</h2>
+						<p> The main features of Random Forests are listed below</p>
+						<ul>
+							<li style="color:#ea9b2d;">It runs efficiently on large data bases</li>
+							<li style="color:#ea9b2d;">Not affected by the curse of dimensionality (Hughes phenomenon)</li>
+							<li style="color:#ea9b2d;">It gives estimates of what variables are important in the classification</li>
+							<li style="color:#ea9b2d;">It is distributed. Each tree can run with a separate subset on a different machine</li>
+						</ul>						
 				
-				
-				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
-				<!--<section class="scrollable">
-					<h1>Copernicus</h1> 
-					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
-					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
-				</section>
-				
-					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
-				<!--<section >
-					<h1>Copernicus</h1> 
-					<br>
-					 
-					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
-					 
-				</section>
-				
-				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
-				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
-				                    <script type="text/template">
-                        # What is Copernicus?
-                        (A demo slide deck using the Reveal.js framework)
+					</section>
+					<!--Out of bag (oob) evaluation-->
+					<section>
+					<section>
+						<h2>Out of bag (oob) evaluation</h2>
+						<p> During bagging, approximately one-third of the data samples are left out of TRi. Why?</p>
+						<img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob.png" alt="OOB_1">
+						<br><p>These samples are called out-of-bag (oob) samples.</p>
+						
+					</section>
+					<section>
+						<h2>Why do we need oob?</h2>
+						<p>OOB sample is used for estimating unbiased classification error (oob error estimate) and variable importance</p>
+						<img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob2.png" alt="OOB_2">
+					</section>
+					<section>
+						<h2>Unbiased oob error estimates</h2>
+						<img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob3.png" alt="OOB_2">
+					</section>						
+					</section>
+					<!--Variable importance-->
+					<section>
+						<h2>Variable importance</h2>
+						<p> Let's consider <em>α</em> the number of votes cast for the correct class for all oob samples in all trees. Is we permute values of variable m in the oob cases randomly and push them down the tree, then avg(α−β) = raw VI score for variable m, where β = number of cases with correct classification</p>
+					</section>
+					<!--Proximity-->
+					<section>
+						<h2>Proximities</h2>
+						<p> Imagine that you send all training samples (including oob samples) down all trees, count the number of times when sample n and sample k are in the same terminal node and normalize by dividing it by number of trees. What does this tell you?</p>
+					</section>
+					
+					
+					
+					
+					
+					
+					
+					
 					
 						
-                        ---
-						
-                        # Copernicus
-                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
-						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
-						
-						
-						--
-						
-						# Earth observation (EO)
-						EO is one out of three main space assets
-						- SatNav
-                        - SatCom
-						- SatObs (EO)
-						
-						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
-                    </script>
-                </section-->
-				
-			
-				
-				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
-				<section id="EO">
-					<section > 
-						<h2>Earth observation (EO)</h2> 
-						<p>EO is one out of three main <em>space assets</em>.</p>
-						<!-- AUTHORS: CREATE BULLETED LIST: --> 
-						<ul>
-							<li style="color:#89b3e479;">SatNav</li>
-							<li style="color:#89b3e479;">SatCom</li>
-							<li style="color:#337acc;">SatObs (EO)</li>
-						</ul>
 						<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
 						
 						<aside class="notes">
