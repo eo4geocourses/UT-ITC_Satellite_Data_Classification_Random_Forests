@@ -87,8 +87,8 @@
 				<section id="RF_1">
 					<section > 
 						<h2>What are ensemble classifiers?</h2> 
-						<p>Combination of multiple<em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
-					<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\EnsembleClassifiers.png" alt="EnsembleClassifiers">
+						<p>Combination of multiple <em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
+					<br><img width="570" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\EnsembleClassifiers.png" alt="EnsembleClassifiers">
 					</section>
 					<section>
 						<h2> How to create ensemble classifiers?</h2>
@@ -104,16 +104,16 @@
 							<li style="color:#ea9b2d;">Win if A > 40</li>
 							<li style="color:#ea9b2d;">Loss otherwise</li>
 						</ul>
-					<p>Game 1: place 100 times, betting $1 each time</p>
-					<p>Game 2: place 10 times, betting $10 each time</p>
-					<p>Game 3: place one time, betting $100</p>
+					<p><b>Game 1: </b> place 100 times, betting $1 each time</p>
+					<p><b>Game 2: </b> place 10 times, betting $10 each time</p>
+					<p><b>Game 3: </b> place one time, betting $100</p>
 					<p> We stimulate each game 10000 times. What do you expect?/</p>
 					</section>
 					<section class="scrollable">
-						<h2> Game result</h2>
-					<br><img width="500" height="150" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games.png" alt="Example_1">
-                    <br><img width="500" height="400" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games2.png" alt="Ecampe_2">					
-						<p> Variance decreases as number of games increase</p>
+						<h2> Game results</h2>
+					<br><img width="500" height="110" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games.png" alt="Example_1">
+                    <br><img width="530" height="400" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Games2.png" alt="Ecampe_2">					
+						<p> Variance decreases as number of games increases</p>
 					</section>
 					
 				</section>
@@ -121,8 +121,8 @@
 					<section>
 					<section>
 						<h2>Bagging (Bootstrap Aggregating)</h2>
-						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. When sampling of training data is done with replacement, it is called <em>bagging</em></p>
-					<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging.png" alt="Bagging_1">
+						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. When sampling of training data is done with replacement, it is called <em>bagging</em>.</p>
+					<br><img width="500" height="320" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging.png" alt="Bagging_1">
 					</section>	
 					<section>
 						<h2> How does this work?</h2>
@@ -133,12 +133,12 @@
 							<li style="color:#ea9b2d;">TR = training set for each predictor</li>
 							<li style="color:#ea9b2d;">TR<em>i</em> = sample of N randomly selected samples with replacement</li>
 						</ul>
-						<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging2.png" alt="Bagging_2">
+						<br><img width="500" height="320" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging2.png" alt="Bagging_2">
 					</section>
 					<section>
 						<h2>Bagging of decision trees</h2>
 						<p>What if these predictors are decision trees?</p>
-						<br><img width="500" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging3.png" alt="Bagging_3">
+						<br><img width="500" height="320" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\Bagging3.png" alt="Bagging_3">
 					</section>
 					
 					</section>
@@ -157,26 +157,26 @@
 					</section>	
 					<section>
 						<h2> How an individual tree is grown?</h2>
-						<p> From an <em>m</em> number of feature, a <em> max_features</em> are selected randomly at each node. Usually the number of features tested for spliting the tree nodes is represented by the square of the total number of available features. Each node is split into two nodes only and there is no pruning</p>
+						<p> From an <em>m</em> number of feature, a <em> max_features</em> are selected randomly at each node. Usually the number of features tested for spliting the tree nodes is represented by the square root of the total number of available features. Each node is split into two nodes only and there is no pruning</p>
 					</section>
 					<section>
-						<h2>How is this procedure different from tree growing in Decision Trees?/</h2>
+						<h2>How is this procedure different from tree growing in Decision Trees?</h2>
 					</section>
 					
 					</section>
 					<!--Random Forests error rate-->
 					<section>
 					<section>
-						<h2>Forrest error rate</h2>
-						<p> This is highly influences by:</p>
+						<h2>Forest error rate</h2>
+						<p> This is highly influenced by:</p>
 						<ul>
 							<li style="color:#ea9b2d;">Correlation between trees: increasing the correlation increases forest error rate</li>
-							<li style="color:#ea9b2d;"> Strength of individual forest tree: Increasing the tree strength decreases the forest error rate</li>
+							<li style="color:#ea9b2d;"> Strength of individual forest tree: increasing the tree strength decreases the forest error rate</li>
 						</ul>						
 					</section>
 					<section>
-						<h2>Forrest error rate(2)</h2>
-						<p>Correlation and strength are controlled by <em>max_features</em>. If max_features increases, correlation between, and strength of trees both increase. Therefore, we have to find an optimal range of max_features</p>
+						<h2>Forest error rate(2)</h2>
+						<p>Correlation and strength are controlled by <em>max_features</em>. If max_features increases, both correlation between and strength of trees increase. Therefore, we have to find an optimal range of max_features.</p>
 					</section>					
 					</section>
 					
@@ -189,7 +189,7 @@
 							<li style="color:#ea9b2d;">It runs efficiently on large data bases</li>
 							<li style="color:#ea9b2d;">Not affected by the curse of dimensionality (Hughes phenomenon)</li>
 							<li style="color:#ea9b2d;">It gives estimates of what variables are important in the classification</li>
-							<li style="color:#ea9b2d;">It is distributed. Each tree can run with a separate subset on a different machine</li>
+							<li style="color:#ea9b2d;">It is distributed, i.e. each tree can run with a separate subset on a different machine</li>
 						</ul>						
 				
 					</section>
@@ -197,30 +197,34 @@
 					<section>
 					<section>
 						<h2>Out of bag (oob) evaluation</h2>
-						<p> During bagging, approximately one-third of the data samples are left out of TRi. Why?</p>
-						<img width="500" height="90" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob.png" alt="OOB_1">
+						<p> During bagging, approximately one-third of the data samples are left out of TR<em>i</em>. Why?</p>
+						<img width="500" height="65" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob.png" alt="OOB_1">
 						<br><p>These samples are called out-of-bag (oob) samples.</p>
 						
 					</section>
 					<section>
 						<h2>Why do we need oob?</h2>
 						<p>OOB sample is used for estimating unbiased classification error (oob error estimate) and variable importance</p>
-						<img width="400" height="350" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob2.png" alt="OOB_2">
+						<img width="500" height="320" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob2.png" alt="OOB_2">
 					</section>
 					<section>
 						<h2>Unbiased oob error estimates</h2>
-						<img width="400" height="330" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob3.png" alt="OOB_2">
+						<img width="400" height="400" style="background-color: transparent; box-shadow: none;" data-src="resources\RandomForests\oob3.png" alt="OOB_2">
 					</section>						
 					</section>
 					<!--Variable importance-->
 					<section>
 						<h2>Variable importance</h2>
-						<p> Let's consider <em>α</em> the number of votes cast for the correct class for all oob samples in all trees. Is we permute values of variable m in the oob cases randomly and push them down the tree, then avg(α−β) = raw VI score for variable m, where β = number of cases with correct classification</p>
+						<p> Let's consider <em>α</em> the number of votes cast for the correct class for all oob samples in all trees. If we permute values of variable <em>m</em> in the oob cases randomly and push them down the tree, then <em>avg(α−β) = raw VI (Variable Importance)</em> score for variable <em>m</em>.</p>
+						<ul>
+						<li style="color:#ea9b2d;">β = number of cases with correct classification</li>
+						</ul>	
+						
 					</section>
 					<!--Proximity-->
 					<section>
 						<h2>Proximities</h2>
-						<p> Imagine that you send all training samples (including oob samples) down all trees, count the number of times when sample n and sample k are in the same terminal node and normalize by dividing it by number of trees. What does this tell you?</p>
+						<p> Imagine that you send all training samples (including oob samples) down all trees, count the number of times when sample <em> n </em> and sample <em> k </em> are in the same terminal node and normalize by dividing it by number of trees. What does this tell you?</p>
 					</section>
 					<!--End-->
 					
@@ -229,10 +233,10 @@
 				<section> 
 				<h2> Reference list </h2>
 				<br>
-				<reference_list>exemplary doi:<br><br>
-				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
-				<br>
-				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
+				<reference_list>
+				<br>Mather, P., & Tso, B. (2009). Classification methods for remotely sensed data (Second Edition), CRC Press, Chapter 6: Decision Trees
+				<br>Richards, J. A. (2013). Remote Sensing Digital ImageAnalysis. In Springer. (Section 8.18)
+				
 				</reference_list>
 				</section>
 				
