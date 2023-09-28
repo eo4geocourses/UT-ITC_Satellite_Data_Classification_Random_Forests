@@ -99,7 +99,7 @@
 					<section > 
 						<h2>What are ensemble classifiers?</h2> 
 						<p>Combination of multiple <em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
-					<br><img width="500" height="305" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/EnsembleClassifiers.png" alt="EnsembleClassifiers">
+					<br><img width="500" height="305" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/EnsembleClassifiers.png" alt="EnsembleClassifiers">
 					</section>
 					<section>
 						<h2> How to create ensemble classifiers?</h2>
@@ -122,8 +122,8 @@
 					</section>
 					<section class="scrollable">
 						<h2> Game results</h2>
-					<br><img width="500" height="110" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/Games.png" alt="Example_1">
-                    <br><img width="580" height="400" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/Games2.png" alt="Ecampe_2">					
+					<br><img width="500" height="110" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Games.png" alt="Example_1">
+                    <br><img width="580" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Games2.png" alt="Ecampe_2">					
 						<p> Variance decreases as number of games increases</p>
 					</section>
 					
@@ -133,7 +133,7 @@
 					<section>
 						<h2>Bagging (Bootstrap Aggregating)</h2>
 						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. The samples are selected randomly with replacement. It means that some samples can be selected seevral times, whereas others might not be selected at all.</em></p>
-					<br><img width="520" height="280" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/Bagging.png" alt="Bagging_1">
+					<br><img width="520" height="280" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging.png" alt="Bagging_1">
 					</section>	
 					<section>
 						<h2> How does this work?</h2>
@@ -144,12 +144,12 @@
 							<li style="color:#ea9b2d;">TR = training set for each predictor</li>
 							<li style="color:#ea9b2d;">TR<em>i</em> = sample of N randomly selected samples with replacement</li>
 						</ul>
-						<br><img width="520" height="300" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/Bagging2.png" alt="Bagging_2">
+						<br><img width="520" height="300" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging2.png" alt="Bagging_2">
 					</section>
 					<section>
 						<h2>Bagging of decision trees</h2>
 						<p>What if these predictors are decision trees?</p>
-						<br><img width="500" height="280" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/Bagging3.png" alt="Bagging_3">
+						<br><img width="500" height="280" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging3.png" alt="Bagging_3">
 					</section>
 					
 					</section>
@@ -209,18 +209,18 @@
 					<section>
 						<h2>Out of bag (oob) evaluation</h2>
 						<p> During bagging, approximately one-third of the data samples are left out of TR<em>i</em>. Why?</p>
-						<img width="500" height="65" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/oob.png" alt="OOB_1">
+						<img width="500" height="65" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob.png" alt="OOB_1">
 						<br><p>These samples are called out-of-bag (oob) samples.</p>
 						
 					</section>
 					<section>
 						<h2>Why do we need oob?</h2>
 						<p>OOB sample is used for estimating unbiased classification error (oob error estimate) and variable importance</p>
-						<img width="500" height="300" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/oob2.png" alt="OOB_2">
+						<img width="500" height="300" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob2.png" alt="OOB_2">
 					</section>
 					<section>
 						<h2>Unbiased oob error estimates</h2>
-						<img width="400" height="400" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/oob3.png" alt="OOB_2">
+						<img width="400" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob3.png" alt="OOB_2">
 					</section>						
 					</section>
 					<!--Variable importance-->
@@ -249,7 +249,7 @@
 		                        </section>
 		                        <section>
 						<h2>Random Forests summary (II)</h2>
-						<img width="700" height="400" style="background-color: transparent; box-shadow: none;" data-src="https://eo4geo.sbg.ac.at/ITC/RandomForests/RandomForest_Overview.png" alt="Random Forest Overview">
+						<img width="700" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/RandomForest_Overview.png" alt="Random Forest Overview">
 					</section>
 					<!--End-->
 					
